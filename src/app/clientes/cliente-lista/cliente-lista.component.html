@@ -1,0 +1,19 @@
+<!-- *ngIf também é uma diretiva estrutural -->
+<mat-accordion *ngIf="clientes.length > 0">
+  <!-- *ngFor é uma diretiva estrutural -->
+  <mat-expansion-panel *ngFor="let cliente of clientes">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{cliente.nome}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>Fone: {{cliente.fone}}</p>
+    <p>E-mail: {{cliente.email}}</p>
+  </mat-expansion-panel>
+</mat-accordion>
+<p
+  *ngIf="clientes.length <= 0"
+  class="mat-body-1"
+  style="text-align: center">
+  Nenhum cliente cadastrado
+</p>
